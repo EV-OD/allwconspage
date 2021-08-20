@@ -1,0 +1,73 @@
+{% extends 'index.html' %}
+
+{% block extra_link %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/signup.css" %}">
+    <script defer src="{% static "js/signup.js" %}"></script>
+{% endblock %}
+
+{% block title %}
+Signup
+{% endblock %}
+
+
+{% block content %}
+    <div class="signup">
+        <div class="title">Signup</div>
+        <hr>
+        <div class="form">
+            <div class="group">
+                <div class="input-group">
+                    <label for="firstname">firstname</label>
+                    <input autocomplete="off" type="text" id="firstname" name="firstname">
+                    <label class="error">Error</label>
+                </div>
+                <div class="input-group">
+                    <label for="lastname">lastname</label>
+                    <input autocomplete="off" type="lastname" id="lastname" name="lastname">
+                    <label class="error">Error</label>
+
+                </div>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input autocomplete="off" type="text" id="username" name="username">
+                    <label class="error">Already exist</label>
+
+                </div>
+                <div class="input-group btn-group">
+                    <a class="login-link" href="{% url "login-page" %}">I have a account</a>
+                    <button onclick="handleNext()">Next</button>
+                </div>
+            </div>
+            <div class="group hidden">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input autocomplete="off" type="text" id="email" name="email">
+                    <label class="error">Error</label>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input autocomplete="off" type="password" id="password" name="password">
+                    <label class="error">Error</label>
+                </div>
+                <div class="input-group">
+                    <label for="re-password">Re-Password</label>
+                    <input autocomplete="off" type="password" id="re-password" name="re-password">
+                    <label class="error">not matched</label>
+
+                </div>
+                <div class="input-group btn-group">
+                    <button onclick="handleNext()">Next</button>
+                </div>
+            </div>
+            <div class="group hidden">
+                <svg width="304" height="304" viewBox="0 0 304 304" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="152" cy="152" r="152" fill="#0FA958"/>
+                    <path d="M101 201.001L120.5 185.578L225.523 102.518L240.411 121.342L115.888 219.825L101 201.001Z" fill="white"/>
+                    <path d="M95.7901 156L100.398 161.799L125.216 193.032L106.426 207.963L77 170.931L95.7901 156Z" fill="white"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+    {% csrf_token %}
+{% endblock %}

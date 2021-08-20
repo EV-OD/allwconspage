@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/index.css"%}">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    {% block extra_link %}
+    {% endblock %}
+    <title>{% block title %}Allwcons{% endblock %}</title>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">
+          <img src="{% static "images/logo1.jpg" %}" alt="" srcset="">
+          {%if is_user %}
+          <h1>{{ user.username }}</h1>
+          {% endif %}
+        </div>
+        <ul class="menus">
+            <li class="menus__item"><a href="{% url "index-page" %}">Home</a></li>
+            {% if not is_user %}
+                <li class="menus__item"><a href="{% url "login-page" %}">Login</a></li>
+                <li class="menus__item"><a href="{% url "signup-page" %}">Signup</a></li>
+            {% elif is_user %}
+                <li class="menus__item"><a href="{% url 'logout' %}">Logout</a></li>
+            {% endif %}
+
+        </ul>
+    </nav>
+    <div class="content">
+        {% block content %}
+            <sidebar class="sidebar">
+            </sidebar>
+        {% endblock %}
+    </div>  
+</body>
+</html>

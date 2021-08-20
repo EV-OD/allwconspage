@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+
+{% block extra_link %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/login.css" %}">
+    <script defer src="{% static "js/login.js" %}"></script>
+{% endblock %}
+
+{% block title %}
+Login
+{% endblock %}
+
+
+{% block content %}
+    <div class="login">
+        <div class="title">Login</div>
+        <hr>
+        <div class="form">
+            <div class="group">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username">
+                    <label class="error">Error</label>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                    <label class="error">Error</label>
+                </div>
+                <div class="input-group">
+                    <a href="#">Forget my password</a>
+                    <button onclick="handleLogin()">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% csrf_token %}
+{% endblock %}
