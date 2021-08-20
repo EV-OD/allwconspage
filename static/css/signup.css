@@ -1,0 +1,139 @@
+.content{
+    display: grid;
+    place-items:center;
+}
+
+.signup{
+    width:100%;
+    max-width: 400px;
+    height:80%;
+    max-height: 600px;
+    border-radius: 10px;
+    background-color:var(--primary-box-bg);
+    overflow: hidden;
+}
+.signup .title{
+    background-color: #5BA4A4;
+    width:100%;
+    height:45px;
+    font-family: Roboto, sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    line-height: 45px;
+
+}
+.signup .form{
+    margin-top:20px;
+    position: relative;
+}
+.signup .form .input-group{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+button{
+    margin-top:20px;
+    width: 120px;
+    height: 40px;
+    margin-left: auto;
+    border-radius: 4px;
+    border:none;
+    cursor: pointer;
+    outline: none;
+}
+
+input:focus{
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+}
+
+button:focus-within{
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+    background-color: #EEF0F0;
+    transition:box-shadow .15s ease-in-out;
+}
+
+input{
+    box-sizing: border-box;
+    border-radius: 4px;
+    outline: none;
+    max-width: 350px;
+    border: 1px solid #ced4da;
+    background-color: #EEF0F0;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    padding:10px 5px;
+}
+.group{
+    position: absolute;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%,0%);
+    top:0;
+    transition: left 0.2s ease;
+}
+
+.error{
+    color: red;
+    visibility: hidden;
+    font-size: 0.6rem;
+}
+
+.hiddentoactive .btn-group{
+    transform: translateY(-70%);
+}
+
+.hiddentoactive svg{
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-15%);
+}
+
+
+.form .hidden{
+    left: 100%;
+    transform: translate(0%,0%);
+
+}
+.hiddentoactive{
+/*    transition-delay: 0.4s;
+*/}
+.form .lefthidden{
+    left: -100%;
+}
+hr{
+    height: 2px;
+    background: #2196f3;
+    width: 0%;
+    position: relative;
+    left: 0%;
+}
+.load hr{
+    width: 50%;
+    animation: load_signup 2s ease-in-out infinite;
+}
+@keyframes load_signup{
+    0%{
+        left: 0%;
+    }
+    100%{
+        left:100%;
+    }
+}
+.load .form{
+    pointer-events: none;
+    opacity: 0.98;
+    filter: opacity(0.5);
+    -webkit-filter: opacity(0.5);
+}
+
+@media only screen and (max-height: 570px){
+    .signup{
+        height: 84%;
+    }
+}

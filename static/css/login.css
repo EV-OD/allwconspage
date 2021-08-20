@@ -1,0 +1,104 @@
+.content{
+    display: grid;
+    place-items:center;
+}
+
+.login{
+    width:100%;
+    max-width: 400px;
+    height:80%;
+    max-height: 600px;
+    border-radius: 10px;
+    background-color:var(--primary-box-bg);
+    overflow: hidden;
+}
+.error{
+    color: red;
+    visibility: hidden;
+    font-size: 0.6rem;
+}
+.login .title{
+    background-color: #5BA4A4;
+    width:100%;
+    height:45px;
+    font-family: Roboto, sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    line-height: 45px;
+
+}
+.login .form{
+    margin-top:40px;
+}
+.login .form .group .input-group{
+    display: flex;
+    margin:0 35px;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.login .form .group .input-group label{
+}
+hr{
+    height: 2px;
+    background: #2196f3;
+    width: 0%;
+    position: relative;
+    left: 0%;
+    transform: translateX(-2px);
+}
+
+.load hr{
+    width: 50%;
+    transform: translateX(-2px);
+    animation: load_login 2s ease-in-out infinite;
+}
+
+@keyframes load_login{
+    from{
+        left: 0%;
+    }
+    to{
+        left: 100%;
+    }
+}
+
+.login .form .group .input-group input{
+    box-sizing: border-box;
+    border-radius: 4px;
+    outline: none;
+    max-width: 350px;
+    border: 1px solid #ced4da;
+    background-color: #EEF0F0;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    padding:10px 5px;
+}
+
+
+.login .form .group .input-group a{
+    text-decoration:#5BA4A4;
+}
+.login .form .group .input-group button{
+    margin-top:20px;
+    width: 120px;
+    height: 40px;
+    margin-left: auto;
+    border-radius: 4px;
+    border:none;
+    cursor: pointer;
+    outline: none;
+}
+
+.login .form .group .input-group input:focus{
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+}
+
+.login .form .group .input-group button:focus-within{
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+    background-color: #EEF0F0;
+    transition:box-shadow .15s ease-in-out;
+}
